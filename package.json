@@ -1,0 +1,12 @@
+{
+  "name": "nechi-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for replying with Umu",
+  "main": "index.js",
+  "repository": "https://github.com/h2so4noel/nechi-bot.git",
+  "author": "h2so4noel",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.1.0"
+  }
+}
