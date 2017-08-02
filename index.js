@@ -19,6 +19,7 @@ client.on('message', message => {
 
   const basiliskLink = 'http://imgur.com/a/wM52r'
   const mumiLink = 'http://imgur.com/a/qmWou'
+  const potatoLink = 'http://imgur.com/a/Anv2U'
 
   if (message.content.includes('!nechibot')) {
     const helpMsg = `เนชิ: Display Nero burning Rome.\nเอนคิดู: Burn Enkidu til he/she gets NP5.\nBasilisk: BASILISK TIEM!!!1!420!`
@@ -43,8 +44,12 @@ client.on('message', message => {
     message.channel.send(basiliskLink)
   }
   else if (message.content.includes('มุมี้')) {
-    logMsg('มุมี้')
+    logMsg('Mumi')
     message.channel.send(mumiLink)
+  }
+  else if (message.content.includes('โปเตโต้')) {
+    logMsg('Potato')
+    message.channel.send(potatoLink)
   }
 });
 
