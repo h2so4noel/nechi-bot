@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const umuToken = 'MzQxODY0MTM0MzQ3OTgwODAx.DGHXoQ.exsnNhKELtR4O9a-NEj-jusjiYA'
 
 function logMsg (op) {
-  if (op) console.log('Triggering: ' + op + 'msg from user: ')
+  if (op) console.log('Triggering: ' + op + ' msg from user: ')
 }
 
 client.on('ready', () => {
