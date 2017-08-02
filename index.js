@@ -8,6 +8,33 @@ function logMsg (op) {
   if (op) console.log('Triggering: ' + op + ' msg from user: ')
 }
 
+function triggerMessage (message) {
+  if (message.content.includes('เอนคิดู')) {
+    logMsg('Enkidu')
+    message.channel.send(fire + fire + fire + '\n' + fire + enkidu + fire + '\n' + fire + fire + fire)
+  }
+  else if (message.content.includes('เนชิ')) {
+    logMsg('Umu')
+    message.channel.send(fire + fire + fire + '\n' + fire + umu + fire + '\n' + fire + fire + fire)
+  }
+  else if (message.content.includes('Basilisk')) {
+    logMsg('Basilisk Time')
+    message.channel.send(basiliskLink)
+  }
+  else if (message.content.includes('มุมี้')) {
+    logMsg('Mumi')
+    message.channel.send(mumiLink)
+  }
+  else if (message.content.includes('โปเตโต้')) {
+    logMsg('Potato')
+    message.channel.send(potatoLink)
+  }
+  else if (message.content.includes('เจ๊ด')) {
+    logMsg('Jed')
+    message.channel.send('37 คนย่ะ เหยียบเป็นฐานไม่ได้')
+  }
+}
+
 client.on('ready', () => {
   console.log('Umu, ready for action!');
 });
@@ -31,26 +58,7 @@ client.on('message', message => {
     }})
   }
 
-  if (message.content.includes('เอนคิดู')) {
-    logMsg('Enkidu')
-    message.channel.send(fire + fire + fire + '\n' + fire + enkidu + fire + '\n' + fire + fire + fire)
-  }
-  else if (message.content.includes('เนชิ')) {
-    logMsg('Umu')
-    message.channel.send(fire + fire + fire + '\n' + fire + umu + fire + '\n' + fire + fire + fire)
-  }
-  else if (message.content.includes('Basilisk')) {
-    logMsg('Basilisk Time')
-    message.channel.send(basiliskLink)
-  }
-  else if (message.content.includes('มุมี้')) {
-    logMsg('Mumi')
-    message.channel.send(mumiLink)
-  }
-  else if (message.content.includes('โปเตโต้')) {
-    logMsg('Potato')
-    message.channel.send(potatoLink)
-  }
+  triggerMessage(message)
 });
 
 client.login(umuToken);
