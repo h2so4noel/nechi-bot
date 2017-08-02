@@ -3,32 +3,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const umuToken = 'MzQxODY0MTM0MzQ3OTgwODAx.DGHXoQ.exsnNhKELtR4O9a-NEj-jusjiYA'
-const nechiCreds = [
-  'nechi',
-  'เนชิ',
-  'Nechi',
-  'Nechigawara',
-  '@Nechigawara'
-]
-const cryCreds = [
-  'แง้',
-  'QAQ',
-  'cry',
-  'cri'
-]
 
-function getEmbeds () {
-  const embeds = []
-  const cry = new Discord.RichEmbed()
-    .setTitle('BibleThump')
-    .attachFile('images/cry.png')
-  const umu = new Discord.RichEmbed()
-    .setTitle('Umu')
-    .attachFile('images/umu.png')
-
-  embeds.push(cry, umu)
-
-  return embeds
+function logMsg (op) {
+  if (op) console.log('Triggering: ' + op)
+  console.log('Sending messages, UMU!')
 }
 
 client.on('ready', () => {
@@ -36,18 +14,18 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  const embedsObj = getEmbeds()
-  const embeds = (embedTitle) => {
-    return _.find(embedsObj, (obj) => {
-      return obj.title === embedTitle
-    })
-  }
+  const enkidu = '<:riyo_enkidu:341123205345574912>'
+  const umu = '<:nechi_brag:341123508526383111>'
+  const fire = ':fire:'
 
-  if (nechiCreds.includes(message.content)) {
-    message.reply('อุมุ', {embed: embeds('Umu')});
+
+  if (message.content.includes('เอนคิดู')) {
+    logMsg('Enkidu')
+    message.channel.send(fire + fire + fire + '\n' + fire + enkidu + fire + '\n' + fire + fire + fire)
   }
-  else if (cryCreds.includes(message.content)) {
-    message.reply('แง้', {embed: embeds('BibleThump')});
+  else if (message.content.includes('เนชิ' || 'อุมุ')) {
+    logMsg('Umu')
+    message.channel.send(fire + fire + fire + '\n' + fire + umu + fire + '\n' + fire + fire + fire)
   }
 });
 
