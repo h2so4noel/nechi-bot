@@ -23,9 +23,13 @@ client.on('message', message => {
     logMsg('Enkidu')
     message.channel.send(fire + fire + fire + '\n' + fire + enkidu + fire + '\n' + fire + fire + fire)
   }
-  else if (message.content.includes('เนชิ' || 'อุมุ')) {
+  else if (message.content.includes('เนชิ')) {
     logMsg('Umu')
     message.channel.send(fire + fire + fire + '\n' + fire + umu + fire + '\n' + fire + fire + fire)
+  }
+  else if (message.content.includes('Basilisk')) {
+    logMsg('Basilisk Time')
+    message.channel.send('http://imgur.com/a/wM52r')
   }
 });
 
