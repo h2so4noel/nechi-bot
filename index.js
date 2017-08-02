@@ -5,8 +5,7 @@ const client = new Discord.Client();
 const umuToken = 'MzQxODY0MTM0MzQ3OTgwODAx.DGHXoQ.exsnNhKELtR4O9a-NEj-jusjiYA'
 
 function logMsg (op) {
-  if (op) console.log('Triggering: ' + op)
-  console.log('Sending messages, UMU!')
+  if (op) console.log('Triggering: ' + op + 'msg from user: ')
 }
 
 client.on('ready', () => {
@@ -18,6 +17,18 @@ client.on('message', message => {
   const umu = '<:nechi_brag:341123508526383111>'
   const fire = ':fire:'
 
+  const basiliskLink = 'http://imgur.com/a/wM52r'
+  const mumiLink = 'http://imgur.com/a/qmWou'
+
+  if (message.content.includes('!nechibot')) {
+    const helpMsg = `เนชิ: Display Nero burning Rome.\nเอนคิดู: Burn Enkidu til he/she gets NP5.\nBasilisk: BASILISK TIEM!!!1!420!`
+
+    logMsg('Displaying help msg')
+    message.channel.send('', {embed: {
+      title: 'NechiBot Commands',
+      description: helpMsg
+    }})
+  }
 
   if (message.content.includes('เอนคิดู')) {
     logMsg('Enkidu')
@@ -29,7 +40,11 @@ client.on('message', message => {
   }
   else if (message.content.includes('Basilisk')) {
     logMsg('Basilisk Time')
-    message.channel.send('http://imgur.com/a/wM52r')
+    message.channel.send(basiliskLink)
+  }
+  else if (message.content.includes('มุมี้')) {
+    logMsg('มุมี้')
+    message.channel.send(mumiLink)
   }
 });
 
